@@ -7,21 +7,18 @@ TollRoute is a Java application that calculates the toll cost for travel between
 
 
 Usage
-
 Follow these steps to use the TollRoute program:
 
-Save the interchanges.json file in the same directory as the TollRoute.java file.
-With the command javac TollRoute.java, compile the TollRoute.java file.
-Use the command java TollRoute to run the built application.
-When asked, provide the starting and finishing location names.
-The application will calculate the entire cost of the journey.
-
-It should be noted that the software requires Java 8 or later to run.
+1. Save the interchanges.json file in the same directory as the TollRoute.java file.
+2. With the command javac TollRoute.java, compile the TollRoute.java file.
+3. Use the command java TollRoute to run the built application.
+4. When asked, provide the starting and finishing location names.
+5. The application will calculate the entire cost of the journey.
+[It should be noted that the software requires Java 8 or later to run.]
 
 
 
 Dependencies
-
 <dependency>
     <groupId>org.json</groupId>
     <artifactId>json</artifactId>
