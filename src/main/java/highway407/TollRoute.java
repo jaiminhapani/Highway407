@@ -14,17 +14,23 @@ import org.json.JSONObject;
 public class TollRoute {
 
 	private static final String FILENAME = "interchanges.json";
-	private static final double TOLL_RATE_PER_KM = 0.25; // $0.25/km
+	// per kilometer is set to $0.25. The program takes user input for the
+	// starting and ending locations
+	private static final double TOLL_RATE_PER_KM = 0.25;
 
 	public static void main(String[] args) {
 		TollRoute tollCalculator = new TollRoute();
 		try (Scanner scan = new Scanner(System.in)) {
+
+			// It takes the starting location and ending location as inputs, and
+			// finds the distance between them
 			System.out.print("Enter the start : ");
 			String startingLocationName = scan.nextLine();
 
 			System.out.print("Enter the end : ");
 			String endingLocationName = scan.nextLine();
 
+			// prints the total cost of the trip.
 			double cost;
 
 			if (startingLocationName.isBlank()
@@ -45,6 +51,8 @@ public class TollRoute {
 
 	public static double costToTrip(String nameToStart, String nameToEnd) {
 		try {
+			// using data from a JSON file containing information about the
+			// different locations and routes.
 			String jsonContent = Files.readString(Paths.get(FILENAME));
 			JSONObject interchangesJson = new JSONObject(jsonContent);
 
@@ -89,6 +97,8 @@ public class TollRoute {
 
 	}
 
+	// It then calculates the cost of the trip based on the distance and a
+	// predefined toll rate.
 	public static double calculateDistance(int startLocationId,
 			int endLocationId, JSONObject locations, HashSet<Object> hashSet)
 			throws JSONException {

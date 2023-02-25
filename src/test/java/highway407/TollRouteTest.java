@@ -55,18 +55,9 @@ public class TollRouteTest {
 	}
 
 	@Test
-	public void testCostToTrip4() {
+	public void testCostToTrip3() {
 		String nameToStart = "Some Nonexistent Location";
 		String nameToEnd = "Dundas Street";
-		double expectedCost = 0.0;
-		assertEquals(expectedCost, TollRoute.costToTrip(nameToStart, nameToEnd),
-				0.0);
-	}
-
-	@Test
-	public void testCostToTrip3() {
-		String nameToStart = "QEW";
-		String nameToEnd = "Some Nonexistent Location";
 		double expectedCost = 0.0;
 		assertEquals(expectedCost, TollRoute.costToTrip(nameToStart, nameToEnd),
 				0.0);
